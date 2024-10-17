@@ -12,7 +12,7 @@ class Input extends StatelessWidget {
   const Input(
       {super.key,
       this.width = 100,
-      this.height = 100,
+      this.height = 50,
       this.isPassword = false,
       this.hintText = "",
       this.inputType = TextInputType.text,
