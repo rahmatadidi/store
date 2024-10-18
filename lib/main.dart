@@ -1,5 +1,4 @@
 import 'package:fe_store/screens/login.dart';
-import 'package:fe_store/screens/register.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Register(),
+        body: Login(),
       ),
     );
   }

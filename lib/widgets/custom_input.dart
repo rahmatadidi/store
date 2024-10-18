@@ -23,7 +23,7 @@ class Input extends StatelessWidget {
     return SizedBox(
       width: width,
       height: height,
-      child: TextField(
+      child: TextFormField(
         controller: controller,
         obscureText: isPassword,
         keyboardType: inputType,
@@ -31,12 +31,19 @@ class Input extends StatelessWidget {
           color: Colors.white,
         ),
         decoration: InputDecoration(
-            hintText: hintText,
+            labelText: hintText,
             filled: true,
             fillColor: AppTheme.secondaryColor,
-            hintStyle: const TextStyle(color: AppTheme.textColorAccent),
+            hintStyle:
+                const TextStyle(color: AppTheme.textColorAccent, fontSize: 10),
+            labelStyle:
+                const TextStyle(color: AppTheme.textColorAccent, fontSize: 15),
             border: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)))),
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            focusedBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                borderSide: BorderSide(color: Colors.white)),
+            floatingLabelBehavior: FloatingLabelBehavior.auto),
       ),
     );
   }

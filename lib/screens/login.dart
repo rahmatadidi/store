@@ -1,3 +1,4 @@
+import 'package:fe_store/screens/register.dart';
 import 'package:fe_store/theme/app_theme.dart';
 import 'package:fe_store/widgets/custom_button.dart';
 import 'package:fe_store/widgets/custom_input.dart';
@@ -18,7 +19,7 @@ class Login extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(left: 20, top: 20),
                 child: const Text(
-                  "LOGIN",
+                  "Login",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -50,13 +51,6 @@ class Login extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text(
-                                  "username",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
                                 Input(
                                   controller: TextEditingController(),
                                   width: 500,
@@ -64,13 +58,6 @@ class Login extends StatelessWidget {
                                 ),
                                 const SizedBox(
                                   height: 20,
-                                ),
-                                const Text(
-                                  "Password",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                const SizedBox(
-                                  height: 10,
                                 ),
                                 Input(
                                   controller: TextEditingController(),
@@ -103,7 +90,13 @@ class Login extends StatelessWidget {
                                   height: 10,
                                 ),
                                 SecondaryButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Register()));
+                                    },
                                     text: "Register",
                                     width: 500)
                               ],

@@ -1,3 +1,4 @@
+import 'package:fe_store/screens/login.dart';
 import 'package:fe_store/theme/app_theme.dart';
 import 'package:fe_store/widgets/custom_button.dart';
 import 'package:fe_store/widgets/custom_input.dart';
@@ -18,7 +19,7 @@ class Register extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(left: 20, top: 20),
                 child: const Text(
-                  "LOGIN",
+                  "Register",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -50,13 +51,6 @@ class Register extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text(
-                                  "username",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
                                 Input(
                                   controller: TextEditingController(),
                                   width: 500,
@@ -65,28 +59,13 @@ class Register extends StatelessWidget {
                                 const SizedBox(
                                   height: 20,
                                 ),
-                                const Text(
-                                  "Email",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
                                 Input(
                                   controller: TextEditingController(),
                                   width: 500,
                                   hintText: "Email",
-                                  isPassword: true,
                                 ),
                                 const SizedBox(
                                   height: 20,
-                                ),
-                                const Text(
-                                  "Password",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                const SizedBox(
-                                  height: 10,
                                 ),
                                 Input(
                                   controller: TextEditingController(),
@@ -95,7 +74,16 @@ class Register extends StatelessWidget {
                                   isPassword: true,
                                 ),
                                 const SizedBox(
-                                  height: 30,
+                                  height: 20,
+                                ),
+                                Input(
+                                  controller: TextEditingController(),
+                                  width: 500,
+                                  hintText: "Confirm Password",
+                                  isPassword: true,
+                                ),
+                                const SizedBox(
+                                  height: 40,
                                 ),
                                 PrimaryButton(
                                   onPressed: () {},
@@ -105,14 +93,23 @@ class Register extends StatelessWidget {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                const Row(
+                                Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Text(
-                                      "Already have an account?",
-                                      style: TextStyle(
-                                          color: AppTheme.textColorAccent),
-                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Login()));
+                                      },
+                                      child: const Text(
+                                        "Already have an account?",
+                                        style: TextStyle(
+                                            color: AppTheme.textColorAccent),
+                                      ),
+                                    )
                                   ],
                                 ),
                               ],
